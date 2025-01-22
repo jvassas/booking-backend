@@ -1,6 +1,4 @@
 import express from "express";
-import path from "path"; // Import path module
-import fs from "fs";
 import cors from "cors";
 import "dotenv/config";
 import connectDB from "./config/mongodb.js";
@@ -19,7 +17,7 @@ connectCloudinary();
 app.use(express.json());
 app.use(
   cors({
-    origin: "http://localhost:5173", // Replace with your frontend URL
+    origin: "http://localhost:5173",
     methods: "GET,POST",
     allowedHeaders: "Content-Type,Authorization",
   })

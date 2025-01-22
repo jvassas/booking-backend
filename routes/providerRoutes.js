@@ -4,7 +4,6 @@ import {
   providerLogin,
   providerList,
 } from "../controller/providerController.js";
-// import upload from "../middleware/multer";
 
 const providerRouter = express.Router();
 

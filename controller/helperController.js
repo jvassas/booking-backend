@@ -1,6 +1,7 @@
 import bcrypt from "bcrypt";
 import providerModel from "../model/providerModel.js";
 
+// Create Provider API
 const addProvider = async (req, res) => {
   try {
     const { firstName, lastName, email, password } = req.body;
@@ -33,6 +34,7 @@ const addProvider = async (req, res) => {
   }
 };
 
+// Get Providers API
 const getProviders = async (req, res) => {
   try {
     const providers = await providerModel

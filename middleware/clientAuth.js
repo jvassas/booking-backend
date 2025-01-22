@@ -1,14 +1,12 @@
 import jwt from "jsonwebtoken";
 
 const clientAuth = async (req, res, next) => {
-  const authHeader = req.headers.authorization; // Use 'authorization' header
+  const authHeader = req.headers.authorization;
   if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return res
-      .status(401)
-      .json({
-        success: false,
-        message: "Unauthorized: Token missing or invalid",
-      });
+    return res.status(401).json({
+      success: false,
+      message: "Unauthorized: Token missing or invalid",
+    });
   }
 
   // Extract the token from the 'Bearer <token>' format
