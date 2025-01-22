@@ -9,16 +9,6 @@ import helperRouter from "./routes/helperRoutes.js";
 import providerRouter from "./routes/providerRoutes.js";
 import clientRouter from "./routes/clientRoutes.js";
 
-// Debug path resolution
-console.log(
-  "Looking for helperController.js at:",
-  path.resolve("./controller/helperController.js")
-);
-console.log(
-  "File exists:",
-  fs.existsSync(path.resolve("./controller/helperController.js"))
-);
-
 // App config
 const app = express();
 const port = process.env.PORT || 4000;
@@ -27,7 +17,13 @@ connectCloudinary();
 
 // Middleware
 app.use(express.json());
-app.use(cors());
+app.use(
+  cors({
+    origin: "http://localhost:5173", // Replace with your frontend URL
+    methods: "GET,POST",
+    allowedHeaders: "Content-Type,Authorization",
+  })
+);
 
 // APIs
 app.use("/api/helper", helperRouter);

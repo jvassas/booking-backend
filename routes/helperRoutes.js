@@ -1,6 +1,6 @@
 import express from "express";
 import { addProvider, getProviders } from "../controller/helperController.js";
-// import upload from "../middleware/multer";
+import upload from "../middleware/multer.js";
 
 const helperRouter = express.Router();
 
